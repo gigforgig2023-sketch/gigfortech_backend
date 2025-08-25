@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from gig.views import signup_view, login_view, profile_view
+from gig.jwt_authentication.jwt_tokens import CustomTokenObtainPairSerializer
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("user/sing_up/v1", signup_view),
+    path("user/login/v1", login_view),
+    path("user/profile/v1", profile_view),
 ]
